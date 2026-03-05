@@ -1,0 +1,8 @@
+__global__ void DibujarDegradado(float* imagen, int ancho) {
+    // Cada hilo calcula su posición 2D
+    int x = threadIdx.x; 
+    int y = threadIdx.y;
+    int i = y * ancho + x;
+
+    imagen[i] = (float)x / ancho; 
+}
